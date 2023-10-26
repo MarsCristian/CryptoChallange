@@ -1,34 +1,31 @@
+#NSA
+'''
+Fatorar n em p e q é difícil
+'''
 import random
-from Crypto.Util import number
 
+#Cifracao: calcular c = m**e mod n
+#Decifração: calcular d = c**d mod n
+#Consistência: c**d = m**(e.d) = m mod n
 
-class RSA:
-
-
-    #Generate 2 random primes. 
-    #We'll use small numbers to start, so you can just pick them out of a prime table. 
-    #Call them "p" and "q"
-    def GenerateRandomPrimeNumber(self):
-        primo = number.getPrime(1024)
+def randomPrime(self, n):
+        primo = number.getPrime(4096)
         return primo
-    
-    def Egcd(self):
+
+def Egcd(self):
         #TODO implementa o bgl ai
         return 'kkkkkkk n ta implementado'
 
-    def Invmod(self):
+def invMod(self):
         #TODO implementa o invmod
         return 'kkkkkkk n ta implementado'
-    
 
-    def GenerateRSA(self):
-        p = self.GenerateRandomPrimeNumber()
-        q = self.GenerateRandomPrimeNumber()
-
-        n = p*q
-
-        totient = (p-1)*(q-1)
-
-        pass
+class RSA:
+  def __init__(self, size):
+    self.e = 3
+    # Gerar dois números primos grandes (entre 512 e 4096 bits)
 
 
+  # Calcular o módulo de n = p.q e o phi o(n) = (p - 1).(q - 1)
+  # Escolher um número retativamente primo "e" 1 < e < o(n) como a chave pública
+  # Calcular a chave privada d = e **(-1) mod o(n)
